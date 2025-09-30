@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo App - Dashboard</title>
+<link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <div class="welcome-msg">
+                Welcome, <span id="username">User</span>!
+            </div>
+            <button class="logout-btn" onclick="logout()">Logout</button>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- Statistics -->
+        <div class="stats">
+            <div class="stat-item">
+                <div class="stat-number" id="totalTodos">0</div>
+                <div class="stat-label">Total Tasks</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" id="completedTodos">0</div>
+                <div class="stat-label">Completed</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" id="pendingTodos">0</div>
+                <div class="stat-label">Pending</div>
+            </div>
+        </div>
+
+        <!-- Add Todo  -->
+        <div class="todo-input">
+            <h2>Add New Task</h2>
+            <div class="input-group">
+                <input type="text" class="todo-text" id="todoInput" placeholder="What needs to be done?" maxlength="200">
+                <button class="add-btn" onclick="addTodo()">Add Task</button>
+            </div>
+        </div>
+
+        <!-- Edit Todo -->
+        <div class="edit-form" id="editForm">
+            <h2>Edit Task</h2>
+            <div class="input-group">
+                <input type="text" class="todo-text" id="editTodoInput" placeholder="Edit task..." maxlength="200">
+                <button class="add-btn" onclick="saveEdit()">Save</button>
+                <button class="delete-btn" onclick="cancelEdit()">Cancel</button>
+            </div>
+        </div>
+
+        <!-- Filter Buttons -->
+        <div class="filter-buttons">
+            <button class="filter-btn active" onclick="filterTodos('all')">All</button>
+            <button class="filter-btn" onclick="filterTodos('pending')">Pending</button>
+            <button class="filter-btn" onclick="filterTodos('completed')">Completed</button>
+        </div>
+
+        <!-- Todo -->
+        <div class="todo-list">
+            <h2>Your Tasks</h2>
+            <div id="todoContainer">
+                <div class="empty-state">
+                    <h3>No tasks yet</h3>
+                    <p>Add your first task above to get started!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="dashboard.js"></script>
+</html>

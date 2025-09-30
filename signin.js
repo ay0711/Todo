@@ -43,7 +43,7 @@ function checkExistingSession() {
     const currentUser = localStorage.getItem('currentUser');
     if (currentUser) {
         // User is already logged in, redirect to dashboard
-        window.location.href = 'index.html';
+        window.location.href = 'dashboard.html';
     }
 }
 
@@ -69,7 +69,7 @@ document.getElementById('signinForm').addEventListener('submit', function(e) {
         
         // Redirect to dashboard after 1 second
         setTimeout(() => {
-            window.location.href = 'index.html';
+            window.location.href = 'dashboard.html';
         }, 1000);
     } else {
         showMessage('Invalid username/email or password.', true);
